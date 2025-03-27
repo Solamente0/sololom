@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Sololom</title>
+  <link rel="stylesheet" href="about.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <img src="../../../assets/icons/icon128.png" alt="Sololom Logo" class="logo">
+        <h1>Sololom</h1>
+      </div>
+      <p class="subtitle">Solamente (Unique) LLM Extension</p>
+    </header>
+    
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="about">About</button>
+      <button class="tab-btn" data-tab="donate">Donate</button>
+      <button class="tab-btn" data-tab="support">Support</button>
+    </nav>
+    
+    <div class="content">
+      <!-- About Tab -->
+      <section id="about" class="tab-content active">
+        <h2>About Sololom</h2>
+        <p>
+          Sololom is a browser extension that provides seamless access to Large Language Models (LLMs) 
+          directly in your browser. With Sololom, you can chat with various AI models without leaving your current page.
+        </p>
+        
+        <h3>Features</h3>
+        <ul>
+          <li><strong>Multiple Chat Modes:</strong> Choose between popup and full-page interfaces</li>
+          <li><strong>Model Selection:</strong> Support for OpenAI, Anthropic, and Mistral models</li>
+          <li><strong>Customizable Settings:</strong> Configure global preferences and chat-specific options</li>
+          <li><strong>Conversation Management:</strong> Save, export, and manage your chat history</li>
+          <li><strong>Keyboard Shortcuts:</strong> Quick access to Sololom's features</li>
+        </ul>
+        
+        <h3>Getting Started</h3>
+        <ol>
+          <li>Add your API keys in the Settings</li>
+          <li>Choose your preferred model</li>
+          <li>Start chatting using the popup or full-page mode</li>
+        </ol>
+        
+        <h3>Privacy</h3>
+        <p>
+          Sololom is designed with privacy in mind. Your conversations and API keys are stored locally in your browser.
+          No data is sent to our servers. All communications happen directly between your browser and the LLM providers.
+        </p>
+        
+        <h3>Open Source</h3>
+        <p>
+          Sololom is an open-source project. You can view the source code, contribute, or fork the project on GitHub.
+        </p>
+        <div class="button-container">
+          <a href="https://github.com/omidnateghi/sololom" target="_blank" class="button">View on GitHub</a>
+        </div>
+        
+        <h3>Version</h3>
+        <p id="version">1.0.0</p>
+      </section>
+      
+      <!-- Donate Tab -->
+      <section id="donate" class="tab-content">
+        <h2>Support the Development</h2>
+        <p>
+          Sololom is a free and open-source project. If you find it useful, consider supporting its ongoing development.
+          Your donations help maintain the project and add new features.
+        </p>
+        
+        <div class="donate-options">
+          <div class="donate-card">
+            <h3>Cryptocurrency</h3>
+            <div class="crypto-option">
+              <h4>Bitcoin (BTC)</h4>
+              <div class="wallet-address">
+                <code id="btcAddress">bc1q8z5l3q7vj8xyqr9ds45d0zsxgdm26cmdjw8f7w</code>
+                <button class="copy-btn" data-clipboard="btcAddress">Copy</button>
+              </div>
+            </div>
+            
+            <div class="crypto-option">
+              <h4>Ethereum (ETH)</h4>
+              <div class="wallet-address">
+                <code id="ethAddress">0x742d35Cc6634C0532925a3b844Bc454e4438f44e</code>
+                <button class="copy-btn" data-clipboard="ethAddress">Copy</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="donate-card">
+            <h3>Other Ways to Help</h3>
+            <ul>
+              <li>Star the project on GitHub</li>
+              <li>Report bugs and suggest features</li>
+              <li>Contribute code or documentation</li>
+              <li>Share Sololom with others</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="thank-you">
+          <h3>Thank You!</h3>
+          <p>Your support is greatly appreciated and helps make this project possible.</p>
+        </div>
+      </section>
+      
+      <!-- Support Tab -->
+      <section id="support" class="tab-content">
+        <h2>Support & Contact</h2>
+        <p>
+          Need help with Sololom? Here are some ways to get support:
+        </p>
+        
+        <div class="support-options">
+          <div class="support-card">
+            <h3>Report a Bug</h3>
+            <p>
+              If you've found a bug or are experiencing issues, please let us know by creating an issue on GitHub
+              or sending an email directly to the developer.
+            </p>
+            <div class="button-container">
+              <a href="https://github.com/omidnateghi/sololom/issues" target="_blank" class="button">GitHub Issues</a>
+              <a href="mailto:omidnateghiofficial@gmail.com?subject=Sololom%20Bug%20Report" class="button">Send Email</a>
+            </div>
+          </div>
+          
+          <div class="support-card">
+            <h3>Feature Request</h3>
+            <p>
+              Have an idea to improve Sololom? We'd love to hear your suggestions!
+            </p>
+            <div class="button-container">
+              <a href="mailto:omidnateghiofficial@gmail.com?subject=Sololom%20Feature%20Request" class="button">Send Suggestion</a>
+            </div>
+          </div>
+          
+          <div class="support-card">
+            <h3>Contact the Developer</h3>
+            <p>
+              For other inquiries, you can reach out directly:
+            </p>
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:omidnateghiofficial@gmail.com">omidnateghiofficial@gmail.com</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/omidnateghi" target="_blank">@omidnateghi</a></li>
+              <li><strong>Twitter:</strong> <a href="https://twitter.com/omidnateghi" target="_blank">@omidnateghi</a></li>
+              <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/omidnateghi" target="_blank">Omid Nateghi</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-section">
+          <h3>Frequently Asked Questions</h3>
+          
+          <div class="faq-item">
+            <h4>How do I get an API key?</h4>
+            <p>
+              You need to create an account with the LLM provider of your choice and generate an API key from their developer portal:
+            </p>
+            <ul>
+              <li><a href="https://platform.openai.com/api-keys" target="_blank">OpenAI API Keys</a></li>
+              <li><a href="https://console.anthropic.com/account/keys" target="_blank">Anthropic API Keys</a></li>
+              <li><a href="https://console.mistral.ai/api-keys/" target="_blank">Mistral API Keys</a></li>
+            </ul>
+          </div>
+          
+          <div class="faq-item">
+            <h4>Is my data private?</h4>
+            <p>
+              Sololom stores your conversations and settings locally in your browser. We don't collect or transmit your data.
+              However, when you interact with LLM APIs, your messages are sent to those providers according to their privacy policies.
+            </p>
+          </div>
+          
+          <div class="faq-item">
+            <h4>How can I reset all settings?</h4>
+            <p>
+              Go to the Settings page and click the "Reset All Settings" button at the bottom of the page.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <footer>
+      <p>&copy; 2025 <a href="mailto:omidnateghiofficial@gmail.com">Omid Nateghi</a>. All rights reserved.</p>
+      <div class="links">
+        <a href="https://github.com/omidnateghi/sololom" target="_blank">GitHub</a>
+        <a href="https://github.com/omidnateghi/sololom/blob/main/LICENSE" target="_blank">License</a>
+      </div>
+    </footer>
+  </div>
+  
+  <div id="toast" class="toast"></div>
+  
+  <script src="about.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "Sololom",
+  "version": "1.0.0",
+  "description": "Solamente (Unique) LLM project - Chat with LLMs directly in your browser",
+  "author": "omidnateghiofficial@gmail.com",
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "Sololom"
+  },
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.openai.com/*",
+    "https://*.anthropic.com/*",
+    "https://*.mistral.ai/*"
+  ],
+  "optional_permissions": [
+    "contextMenus"
+  ],
+  "options_page": "src/settings/settings.html",
+  "web_accessible_resources": [{
+    "resources": ["assets/*"],
+    "matches": ["<all_urls>"]
+  }],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Alt+L"
+      },
+      "description": "Open Sololom popup"
+    },
+    "open_fullpage": {
+      "suggested_key": {
+        "default": "Alt+Shift+L"
+      },
+      "description": "Open Sololom full-page chat"
+    }
+  }
+}

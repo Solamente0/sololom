@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sololom Settings</title>
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="settings-container">
+    <header class="settings-header">
+      <h1>Sololom Settings</h1>
+      <div class="theme-toggle">
+        <label for="themeToggle">Dark Theme</label>
+        <input type="checkbox" id="themeToggle">
+      </div>
+    </header>
+
+    <div class="settings-content">
+      <div class="settings-section">
+        <h2>API Keys</h2>
+        <p class="settings-description">Enter your API keys for the LLM providers you want to use.</p>
+        
+        <div class="settings-group">
+          <label for="openaiApiKey">OpenAI API Key</label>
+          <div class="api-key-input">
+            <input type="password" id="openaiApiKey" placeholder="sk-...">
+            <button class="toggle-visibility" data-for="openaiApiKey">👁️</button>
+          </div>
+          <p class="api-source">Get your key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI's website</a></p>
+        </div>
+        
+        <div class="settings-group">
+          <label for="anthropicApiKey">Anthropic API Key</label>
+          <div class="api-key-input">
+            <input type="password" id="anthropicApiKey" placeholder="sk-ant-...">
+            <button class="toggle-visibility" data-for="anthropicApiKey">👁️</button>
+          </div>
+          <p class="api-source">Get your key from <a href="https://console.anthropic.com/account/keys" target="_blank">Anthropic's website</a></p>
+        </div>
+        
+        <div class="settings-group">
+          <label for="mistralApiKey">Mistral API Key</label>
+          <div class="api-key-input">
+            <input type="password" id="mistralApiKey" placeholder="...">
+            <button class="toggle-visibility" data-for="mistralApiKey">👁️</button>
+          </div>
+          <p class="api-source">Get your key from <a href="https://console.mistral.ai/api-keys/" target="_blank">Mistral's website</a></p>
+        </div>
+      </div>
+      
+      <div class="settings-section">
+        <h2>General Settings</h2>
+        
+        <div class="settings-group">
+          <label for="defaultModel">Default Model</label>
+          <select id="defaultModel">
+            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+            <option value="gpt-4">GPT-4</option>
+            <option value="claude-2.1">Claude 2.1</option>
+            <option value="claude-3-opus">Claude 3 Opus</option>
+            <option value="mistral-small">Mistral Small</option>
+            <option value="mistral-medium">Mistral Medium</option>
+          </select>
+        </div>
+        
+        <div class="settings-group checkbox-group">
+          <input type="checkbox" id="saveConversations">
+          <label for="saveConversations">Save Conversations</label>
+        </div>
+        
+        <div class="settings-group">
+          <label for="maxConversations">Maximum Saved Conversations</label>
+          <input type="number" id="maxConversations" min="1" max="500" value="100">
+        </div>
+      </div>
+      
+      <div class="settings-section">
+        <h2>Appearance</h2>
+        
+        <div class="settings-group">
+          <label for="fontSize">Font Size</label>
+          <select id="fontSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+        </div>
+        
+        <div class="settings-group checkbox-group">
+          <input type="checkbox" id="compactMode">
+          <label for="compactMode">Compact Mode</label>
+        </div>
+      </div>
+      
+      <div class="settings-section">
+        <h2>Advanced</h2>
+        
+        <div class="settings-group">
+          <label for="contextWindow">Maximum Context Window</label>
+          <select id="contextWindow">
+            <option value="5">5 messages</option>
+            <option value="10">10 messages</option>
+            <option value="20">20 messages</option>
+            <option value="50">50 messages</option>
+            <option value="0">Unlimited</option>
+          </select>
+        </div>
+        
+        <div class="settings-group">
+          <button id="exportSettingsBtn" class="secondary-button">Export Settings</button>
+          <button id="importSettingsBtn" class="secondary-button">Import Settings</button>
+        </div>
+        
+        <div class="settings-group">
+          <button id="resetSettingsBtn" class="danger-button">Reset All Settings</button>
+        </div>
+      </div>
+    </div>
+    
+    <footer class="settings-footer">
+      <div class="button-group">
+        <button id="cancelBtn" class="secondary-button">Cancel</button>
+        <button id="saveBtn" class="primary-button">Save Settings</button>
+      </div>
+      
+      <div class="settings-links">
+        <a href="#" id="aboutLink">About</a>
+        <a href="#" id="donateLink">Donate</a>
+        <a href="mailto:omidnateghiofficial@gmail.com" id="supportLink">Support</a>
+      </div>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  
+  <script src="settings.js"></script>
+</body>
+</html>

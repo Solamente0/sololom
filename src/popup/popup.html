@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sololom</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>Sololom</h1>
+      <div class="popup-actions">
+        <button id="settingsBtn" title="Settings">⚙️</button>
+        <button id="fullPageBtn" title="Open Full Page Chat">📋</button>
+      </div>
+    </header>
+    
+    <div class="chat-container">
+      <div id="chatMessages" class="chat-messages">
+        <!-- Messages will be dynamically inserted here -->
+      </div>
+      
+      <div class="model-selection">
+        <select id="modelSelect">
+          <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+          <option value="gpt-4">GPT-4</option>
+          <option value="claude-2.1">Claude 2.1</option>
+          <option value="claude-3-opus">Claude 3 Opus</option>
+          <option value="mistral-small">Mistral Small</option>
+          <option value="mistral-medium">Mistral Medium</option>
+        </select>
+        <button id="chatSettingsBtn" title="Chat Settings">⚙️</button>
+      </div>
+      
+      <div class="chat-input-container">
+        <textarea 
+          id="userInput" 
+          placeholder="Type your message here..." 
+          rows="3"
+          autofocus
+        ></textarea>
+        <button id="sendBtn" title="Send Message">📤</button>
+      </div>
+    </div>
+    
+    <footer class="popup-footer">
+      <button id="clearChatBtn">Clear Chat</button>
+      <button id="aboutBtn">About</button>
+      <button id="donateBtn">Donate</button>
+    </footer>
+  </div>
+
+  <!-- Chat Settings Modal -->
+  <div id="chatSettingsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>Chat Settings</h2>
+      
+      <div class="settings-group">
+        <label for="temperatureSlider">Temperature: <span id="temperatureValue">0.7</span></label>
+        <input type="range" id="temperatureSlider" min="0" max="1" step="0.1" value="0.7">
+      </div>
+      
+      <div class="settings-group">
+        <label for="maxTokensInput">Max Tokens:</label>
+        <input type="number" id="maxTokensInput" min="100" max="4096" value="2048">
+      </div>
+      
+      <div class="settings-group">
+        <label for="systemPromptInput">System Prompt:</label>
+        <textarea id="systemPromptInput" rows="3">You are a helpful assistant.</textarea>
+      </div>
+      
+      <div class="button-group">
+        <button id="resetChatSettingsBtn">Reset to Defaults</button>
+        <button id="saveChatSettingsBtn">Save Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
