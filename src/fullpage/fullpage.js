@@ -774,4 +774,6 @@ function openAboutPage() {
 /**
  * Opens the donate page
  */
-function open
+function openDonatePage() {
+  chrome.tabs.create({ url: chrome.runtime.getURL('src/about/about.html#donate') });
+}
