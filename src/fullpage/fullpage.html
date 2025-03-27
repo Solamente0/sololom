@@ -1,123 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sololom - Full Page Chat</title>
-  <link rel="stylesheet" href="fullpage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sololom - Full Page Chat</title>
+    <link rel="stylesheet" href="fullpage.css">
 </head>
 <body>
-  <div class="app-container">
+<div class="app-container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="sidebar-header">
-        <h1>Sololom</h1>
-        <button id="toggleSidebarBtn" title="Toggle Sidebar">◀</button>
-      </div>
-      
-      <div class="conversations-section">
-        <div class="section-header">
-          <h2>Conversations</h2>
-          <button id="newChatBtn" title="New Chat">+</button>
+        <div class="sidebar-header">
+            <h1>Sololom</h1>
+            <button id="toggleSidebarBtn" title="Toggle Sidebar">◀</button>
         </div>
-        
-        <div class="conversations-list" id="conversationsList">
-          <!-- Conversations will be dynamically inserted here -->
+
+        <div class="conversations-section">
+            <div class="section-header">
+                <h2>Conversations</h2>
+                <button id="newChatBtn" title="New Chat">+</button>
+            </div>
+
+            <div class="conversations-list" id="conversationsList">
+                <!-- Conversations will be dynamically inserted here -->
+            </div>
         </div>
-      </div>
-      
-      <div class="sidebar-footer">
-        <button id="settingsBtn" title="Settings">⚙️ Settings</button>
-        <button id="aboutBtn" title="About">ℹ️ About</button>
-        <button id="donateBtn" title="Donate">❤️ Donate</button>
-      </div>
+
+        <div class="sidebar-footer">
+            <button id="settingsBtn" title="Settings">⚙️ Settings</button>
+            <button id="aboutBtn" title="About">ℹ️ About</button>
+            <button id="donateBtn" title="Donate">❤️ Donate</button>
+        </div>
     </aside>
-    
+
     <!-- Main Chat Area -->
     <main class="main-content">
-      <header class="chat-header">
-        <div class="chat-info">
-          <h2 id="chatTitle">New Conversation</h2>
-          <span id="modelLabel" class="model-label">GPT-3.5 Turbo</span>
+        <header class="chat-header">
+            <div class="chat-info">
+                <h2 id="chatTitle">New Conversation</h2>
+                <span id="modelLabel" class="model-label">GPT-3.5 Turbo</span>
+            </div>
+
+            <div class="header-actions">
+                <button id="exportChatBtn" title="Export Chat">📤</button>
+                <button id="clearChatBtn" title="Clear Chat">🗑️</button>
+                <button id="chatSettingsBtn" title="Chat Settings">⚙️</button>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div id="chatMessages" class="chat-messages">
+                <!-- Messages will be dynamically inserted here -->
+            </div>
         </div>
-        
-        <div class="header-actions">
-          <button id="exportChatBtn" title="Export Chat">📤</button>
-          <button id="clearChatBtn" title="Clear Chat">🗑️</button>
-          <button id="chatSettingsBtn" title="Chat Settings">⚙️</button>
-        </div>
-      </header>
-      
-      <div class="chat-container">
-        <div id="chatMessages" class="chat-messages">
-          <!-- Messages will be dynamically inserted here -->
-        </div>
-      </div>
-      
-      <footer class="chat-footer">
-        <div class="model-selection">
-          <select id="modelSelect">
-            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
-            <option value="gpt-4">GPT-4</option>
-            <option value="claude-2.1">Claude 2.1</option>
-            <option value="claude-3-opus">Claude 3 Opus</option>
-            <option value="mistral-small">Mistral Small</option>
-            <option value="mistral-medium">Mistral Medium</option>
-          </select>
-        </div>
-        
-        <div class="chat-input-container">
-          <textarea 
-            id="userInput" 
-            placeholder="Type your message here..." 
-            rows="1"
-            autofocus
+
+        <footer class="chat-footer">
+            <div class="model-selection">
+                <select id="modelSelect">
+                    <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                    <option value="gpt-4">GPT-4</option>
+                    <option value="claude-2.1">Claude 2.1</option>
+                    <option value="claude-3-opus">Claude 3 Opus</option>
+                    <option value="mistral-small">Mistral Small</option>
+                    <option value="mistral-medium">Mistral Medium</option>
+                    <!-- Add these inside the modelSelect dropdown-->
+                    <option value="openrouter/meta-llama/llama-3-70b">Meta Llama 3 70B</option>
+<!--                    <option value="openrouter/meta-llama/llama-3-8b-instruct">Meta Llama 3 8B</option>-->
+                    <option value="meta-llama/llama-3-8b-instruct">Meta Llama 3 8B</option>
+                    <option value="openrouter/google/gemini-pro">Google Gemini Pro</option>
+                    <option value="openrouter/anthropic/claude-3-opus">Claude 3 Opus (via OpenRouter)</option>
+                </select>
+            </div>
+
+            <div class="chat-input-container">
+          <textarea
+                  id="userInput"
+                  placeholder="Type your message here..."
+                  rows="1"
+                  autofocus
           ></textarea>
-          <button id="sendBtn" title="Send Message">📤</button>
-        </div>
-      </footer>
+                <button id="sendBtn" title="Send Message">📤</button>
+            </div>
+        </footer>
     </main>
-  </div>
-  
-  <!-- Chat Settings Modal -->
-  <div id="chatSettingsModal" class="modal">
+</div>
+
+<!-- Chat Settings Modal -->
+<div id="chatSettingsModal" class="modal">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
-      <h2>Chat Settings</h2>
-      
-      <div class="settings-group">
-        <label for="chatTitleInput">Conversation Title</label>
-        <input type="text" id="chatTitleInput" placeholder="My Conversation">
-      </div>
-      
-      <div class="settings-group">
-        <label for="temperatureSlider">Temperature: <span id="temperatureValue">0.7</span></label>
-        <input type="range" id="temperatureSlider" min="0" max="1" step="0.1" value="0.7">
-        <p class="setting-description">Higher values make output more random, lower values more deterministic</p>
-      </div>
-      
-      <div class="settings-group">
-        <label for="maxTokensInput">Max Tokens:</label>
-        <input type="number" id="maxTokensInput" min="100" max="4096" value="2048">
-        <p class="setting-description">Maximum number of tokens to generate in the response</p>
-      </div>
-      
-      <div class="settings-group">
-        <label for="systemPromptInput">System Prompt:</label>
-        <textarea id="systemPromptInput" rows="4">You are a helpful assistant.</textarea>
-        <p class="setting-description">Instructions for the AI to follow in this conversation</p>
-      </div>
-      
-      <div class="button-group">
-        <button id="resetChatSettingsBtn" class="secondary-button">Reset to Defaults</button>
-        <button id="saveChatSettingsBtn" class="primary-button">Save Settings</button>
-      </div>
+        <span class="close-btn">&times;</span>
+        <h2>Chat Settings</h2>
+
+        <div class="settings-group">
+            <label for="chatTitleInput">Conversation Title</label>
+            <input type="text" id="chatTitleInput" placeholder="My Conversation">
+        </div>
+
+        <div class="settings-group">
+            <label for="temperatureSlider">Temperature: <span id="temperatureValue">0.7</span></label>
+            <input type="range" id="temperatureSlider" min="0" max="1" step="0.1" value="0.7">
+            <p class="setting-description">Higher values make output more random, lower values more deterministic</p>
+        </div>
+
+        <div class="settings-group">
+            <label for="maxTokensInput">Max Tokens:</label>
+            <input type="number" id="maxTokensInput" min="100" max="4096" value="2048">
+            <p class="setting-description">Maximum number of tokens to generate in the response</p>
+        </div>
+
+        <div class="settings-group">
+            <label for="systemPromptInput">System Prompt:</label>
+            <textarea id="systemPromptInput" rows="4">You are a helpful assistant.</textarea>
+            <p class="setting-description">Instructions for the AI to follow in this conversation</p>
+        </div>
+
+        <div class="button-group">
+            <button id="resetChatSettingsBtn" class="secondary-button">Reset to Defaults</button>
+            <button id="saveChatSettingsBtn" class="primary-button">Save Settings</button>
+        </div>
     </div>
-  </div>
-  
-  <!-- Toast notification -->
-  <div id="toast" class="toast"></div>
-  
-  <script src="fullpage.js"></script>
+</div>
+
+<!-- Toast notification -->
+<div id="toast" class="toast"></div>
+
+<script src="fullpage.js"></script>
 </body>
 </html>

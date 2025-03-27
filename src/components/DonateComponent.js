@@ -22,8 +22,9 @@ export default class DonateComponent {
   constructor(options) {
     this.options = {
       wallets: {
-        btc: "bc1q8z5l3q7vj8xyqr9ds45d0zsxgdm26cmdjw8f7w",
-        eth: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+        btc: "bc1qfw0cmg30lgard7jx66mh85l0ea7kvt38tppe57",
+        eth: "0x1410F99B230E87833A7A9E3b4c6ed5C5Cd57A5D8",
+        trx: "TPyyZZNrc9naqKzPYEzdmzouAHoXh7M1EA",
       },
       ...options,
     };
@@ -89,6 +90,15 @@ export default class DonateComponent {
       walletOptions.appendChild(ethOption);
     }
 
+    // Ethereum option
+    if (this.options.wallets.trx) {
+      const ethOption = this.createWalletOption(
+        "Tron (TRX)",
+        this.options.wallets.trx,
+        "trxAddress"
+      );
+      walletOptions.appendChild(ethOption);
+    }
     // Thank you message
     const thankYou = document.createElement("div");
     thankYou.className = "thank-you";

@@ -224,7 +224,7 @@ Our development strategy follows a phased approach to ensure we deliver a high-q
 ### Project Setup
 1. **Clone the repository**
    ```
-   git clone https://github.com/omidnateghi/sololom.git
+   git clone https://github.com/solamente0/sololom.git
    cd sololom
    ```
 

@@ -20,7 +20,7 @@ Sololom (Solamente LLM) is a browser extension that provides seamless access to 
 ### From Source
 1. Clone this repository:
    ```
-   git clone https://github.com/omidnateghi/sololom.git
+   git clone https://github.com/solamente0/sololom.git
    ```
 2. Navigate to your browser's extension management page:
    - Chrome: `chrome://extensions/`
@@ -72,6 +72,5 @@ All forks and derivatives must retain attribution to the original author.
 ## Author
 
 - Omid Nateghi (omidnateghiofficial@gmail.com)
-- [GitHub](https://github.com/omidnateghi)
-- [Twitter/X](https://twitter.com/omidnateghi)
-- [LinkedIn](https://linkedin.com/in/omidnateghi)
+- [GitHub](https://github.com/solamente0)
+- [LinkedIn](https://linkedin.com/in/solamente)

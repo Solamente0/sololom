@@ -114,6 +114,9 @@ async function fetchLLMResponse(data) {
     case "mistral":
       response = await fetchFromMistral(data, apiKey);
       break;
+    case "openrouter":
+      response = await fetchFromOpenRouter(data, apiKey);
+      break;
     default:
       throw new Error("Unsupported model provider");
   }
@@ -243,6 +246,39 @@ async function fetchFromMistral(data, apiKey) {
   return response.json();
 }
 
+/**
+ * Fetch response from OpenRouter API
+ * @param {Object} data - Request data
+ * @param {string} apiKey - OpenRouter API key
+ * @returns {Promise<Object>} - The OpenRouter response
+ */
+async function fetchFromOpenRouter(data, apiKey) {
+  const response = await fetch(
+    "https://openrouter.ai/api/v1/chat/completions",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: data.model,
+        messages: data.messages,
+        temperature: data.temperature || 0.7,
+        max_tokens: data.maxTokens || 2048,
+      }),
+    }
+  );
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(
+      `OpenRouter API Error: ${errorData.error?.message || "Unknown error"}`
+    );
+  }
+
+  return response.json();
+}
 /**
  * Saves a conversation to storage
  * @param {Object} conversation - The conversation to save

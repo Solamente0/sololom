@@ -116,6 +116,7 @@ resetSettingsBtn.addEventListener("click", async () => {
         openai: "",
         anthropic: "",
         mistral: "",
+        openrouter: "", // Add this line
       },
       saveConversations: true,
       maxConversations: 100,
@@ -149,6 +150,7 @@ exportSettingsBtn.addEventListener("click", () => {
     openai: exportSettings.apiKeys.openai ? "[API_KEY]" : "",
     anthropic: exportSettings.apiKeys.anthropic ? "[API_KEY]" : "",
     mistral: exportSettings.apiKeys.mistral ? "[API_KEY]" : "",
+    openrouter: exportSettings.apiKeys.openrouter ? "[API_KEY]" : "",
   };
 
   const dataStr = JSON.stringify(exportSettings, null, 2);

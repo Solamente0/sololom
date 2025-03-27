@@ -2,7 +2,7 @@
  * Sololom - Full Page Chat Script
  * Handles the full page chat UI and functionality
  */
-import { getModelDisplayName } from "../utils/helpers";
+import { getModelDisplayName } from "../utils/helpers.js";
 
 // DOM Elements
 const chatMessages = document.getElementById("chatMessages");

@@ -146,6 +146,19 @@ export function getModelDisplayName(model) {
     "mistral-small": "Mistral Small",
     "mistral-medium": "Mistral Medium",
     "mistral-large": "Mistral Large",
+
+    // OpenRouter models
+    "openrouter/meta-llama/llama-3-70b": "Meta Llama 3 70B",
+    // "openrouter/meta-llama/llama-3-8b-instruct": "Meta Llama 3 8B",
+    "meta-llama/llama-3-8b-instruct": "Meta Llama 3 8B",
+    "openrouter/google/gemini-pro": "Google Gemini Pro",
+    "openrouter/google/gemini-1.5-pro": "Google Gemini 1.5 Pro",
+    "openrouter/anthropic/claude-3-opus": "Claude 3 Opus (OpenRouter)",
+    "openrouter/anthropic/claude-3-sonnet": "Claude 3 Sonnet (OpenRouter)",
+    "openrouter/anthropic/claude-3-haiku": "Claude 3 Haiku (OpenRouter)",
+    "openrouter/cohere/command-r": "Cohere Command R",
+    "openrouter/mistral/mistral-large": "Mistral Large (OpenRouter)",
+    "openrouter/mistral/mistral-small": "Mistral Small (OpenRouter)",
   };
 
   return modelMap[model] || model;

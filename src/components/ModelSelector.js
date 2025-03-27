@@ -79,6 +79,7 @@ export default class ModelSelector {
         openai: { name: "OpenAI", models: [] },
         anthropic: { name: "Anthropic", models: [] },
         mistral: { name: "Mistral", models: [] },
+        openrouter: { name: "OpenRouter", models: [] }, // Add this line
       };
 
       // Categorize models by provider

@@ -25,7 +25,7 @@ Our testing approach includes several layers:
 
 ```bash
 # Clone the repository
-git clone https://github.com/omidnateghi/sololom.git
+git clone https://github.com/solamente0/sololom.git
 cd sololom
 
 # Install dependencies (including testing tools)

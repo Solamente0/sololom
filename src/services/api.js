@@ -197,13 +197,13 @@ async function callOpenRouter(params, apiKey) {
   const modelName = params.model.startsWith("openrouter/")
     ? params.model.substring("openrouter/".length)
     : params.model;
-
+  console.log("openrouterModelName", modelName);
   const requestOptions = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
-      "HTTP-Referer": "https://github.com/omidnateghi/sololom", // Your app's website
+      "HTTP-Referer": "https://github.com/solamente0/sololom", // Your app's website
       "X-Title": "Sololom Extension", // Your app's name
     },
     body: JSON.stringify({
@@ -286,10 +286,14 @@ export function getAvailableModels(provider) {
       return [
         // Latest OpenRouter models (as of March 2025)
         {
-          id: "openrouter/meta-llama-3-70b-instruct",
+          id: "openrouter/meta-llama/llama-3-70b",
           name: "Meta Llama 3 70B",
         },
-        { id: "openrouter/meta-llama-3-8b-instruct", name: "Meta Llama 3 8B" },
+        {
+          // id: "openrouter/meta-llama/llama-3-8b-instruct",
+          id: "meta-llama/llama-3-8b-instruct",
+          name: "Meta Llama 3 8B",
+        },
         { id: "openrouter/google/gemini-pro", name: "Google Gemini Pro" },
         {
           id: "openrouter/google/gemini-1.5-pro",
@@ -340,6 +344,11 @@ export function getAllAvailableModels() {
     ...getAvailableModels("mistral").map((model) => ({
       ...model,
       provider: "mistral",
+    })),
+    ...getAvailableModels("openrouter").map((model) => ({
+      // Add this block
+      ...model,
+      provider: "openrouter",
     })),
   ];
 }
@@ -403,7 +412,7 @@ export async function testApiKey(provider, apiKey) {
           method: "GET",
           headers: {
             Authorization: `Bearer ${apiKey}`,
-            "HTTP-Referer": "https://github.com/omidnateghi/sololom",
+            "HTTP-Referer": "https://github.com/solamente0/sololom",
             "X-Title": "Sololom Extension",
           },
         });
