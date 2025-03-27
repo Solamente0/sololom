@@ -119,10 +119,10 @@ Example structure:
  * Tests for [Component/Utility/Service]
  */
 
-import { functionToTest } from '../../src/path/to/file';
+import { functionToTest } from '@/path/to/file';
 
 // Mock dependencies if needed
-jest.mock('../../src/path/to/dependency');
+jest.mock('@/path/to/dependency');
 
 describe('Component/Utility/Service Name', () => {
   // Setup before tests
@@ -266,7 +266,7 @@ Example:
 
 ```javascript
 // Mock chrome API
-jest.mock('../../src/utils/chrome', () => ({
+jest.mock('@/utils/chrome', () => ({
   storage: {
     get: jest.fn().mockResolvedValue({ key: 'value' }),
     set: jest.fn().mockResolvedValue(undefined)

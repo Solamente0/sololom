@@ -2,15 +2,15 @@
  * Tests for the Chat component
  */
 
-import Chat from "../../src/components/Chat";
-import * as ApiService from "../../src/services/api";
-import * as StorageService from "../../src/services/storage";
-import * as SettingsService from "../../src/services/settings";
+import Chat from "@/components/Chat";
+import * as ApiService from "@/services/api";
+import * as StorageService from "@/services/storage";
+import * as SettingsService from "@/services/settings";
 
 // Mock the services
-jest.mock("../../src/services/api");
-jest.mock("../../src/services/storage");
-jest.mock("../../src/services/settings");
+jest.mock("@/services/api");
+jest.mock("@/services/storage");
+jest.mock("@/services/settings");
 
 describe("Chat Component", () => {
   // DOM elements

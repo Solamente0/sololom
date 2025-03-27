@@ -2,7 +2,7 @@
  * Tests for the helpers utility functions
  */
 
-import * as helpers from "../../src/utils/helpers";
+import * as helpers from "@/utils/helpers";
 
 describe("helpers utility functions", () => {
   describe("generateUUID", () => {

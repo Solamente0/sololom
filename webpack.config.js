@@ -18,6 +18,11 @@ module.exports = {
     filename: "[name].js",
     clean: true,
   },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
+  },
   module: {
     rules: [
       {

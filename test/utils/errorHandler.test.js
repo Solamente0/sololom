@@ -2,7 +2,7 @@
  * Tests for the error handler utility functions
  */
 
-import * as errorHandler from "../../src/utils/errorHandler";
+import * as errorHandler from "@/utils/errorHandler";
 
 describe("errorHandler utility functions", () => {
   describe("handleApiError", () => {

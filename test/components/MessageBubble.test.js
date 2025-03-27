@@ -2,11 +2,11 @@
  * Tests for the MessageBubble component
  */
 
-import MessageBubble from "../../src/components/MessageBubble";
-import * as helpers from "../../src/utils/helpers";
+import MessageBubble from "@/components/MessageBubble";
+import * as helpers from "@/utils/helpers";
 
 // Mock the helpers module
-jest.mock("../../src/utils/helpers", () => ({
+jest.mock("@/utils/helpers", () => ({
   renderMarkdown: jest.fn((content) => `<p>${content}</p>`),
   showToast: jest.fn(),
 }));

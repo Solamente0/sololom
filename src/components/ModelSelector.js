@@ -4,9 +4,9 @@
  * Provides a dropdown for selecting LLM models
  */
 
-import * as ApiService from "../services/api.js";
-import * as SettingsService from "../services/settings.js";
-import { getProviderFromModel } from "../utils/helpers.js";
+import * as ApiService from "@/services/api.js";
+import * as SettingsService from "@/services/settings.js";
+import { getProviderFromModel } from "@/utils/helpers.js";
 
 export default class ModelSelector {
   /**

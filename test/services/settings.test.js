@@ -2,11 +2,11 @@
  * Tests for the settings service
  */
 
-import * as SettingsService from "../../src/services/settings";
-import * as StorageService from "../../src/services/storage";
+import * as SettingsService from "@/services/settings";
+import * as StorageService from "@/services/storage";
 
 // Mock the storage service
-jest.mock("../../src/services/storage");
+jest.mock("@/services/storage");
 
 describe("Settings Service", () => {
   beforeEach(() => {

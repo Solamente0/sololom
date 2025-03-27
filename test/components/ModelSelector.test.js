@@ -2,13 +2,13 @@
  * Tests for the ModelSelector component
  */
 
-import ModelSelector from "../../src/components/ModelSelector";
-import * as ApiService from "../../src/services/api";
-import * as SettingsService from "../../src/services/settings";
+import ModelSelector from "@/components/ModelSelector";
+import * as ApiService from "@/services/api";
+import * as SettingsService from "@/services/settings";
 
 // Mock the services
-jest.mock("../../src/services/api");
-jest.mock("../../src/services/settings");
+jest.mock("@/services/api");
+jest.mock("@/services/settings");
 
 describe("ModelSelector Component", () => {
   // Container element

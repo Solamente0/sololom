@@ -2,7 +2,7 @@
  * Tests for the storage service
  */
 
-import * as StorageService from "../../src/services/storage";
+import * as StorageService from "@/services/storage";
 
 describe("Storage Service", () => {
   beforeEach(() => {

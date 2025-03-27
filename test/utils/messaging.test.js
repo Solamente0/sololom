@@ -2,7 +2,7 @@
  * Tests for the messaging utility functions
  */
 
-import * as messaging from "../../src/utils/messaging";
+import * as messaging from "@/utils/messaging";
 
 describe("messaging utility functions", () => {
   describe("sendToBackground", () => {

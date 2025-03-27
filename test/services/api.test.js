@@ -2,11 +2,11 @@
  * Tests for the API service
  */
 
-import * as ApiService from "../../src/services/api";
-import * as SettingsService from "../../src/services/settings";
+import * as ApiService from "@/services/api";
+import * as SettingsService from "@/services/settings";
 
 // Mock the settings service
-jest.mock("../../src/services/settings");
+jest.mock("@/services/settings");
 
 describe("API Service", () => {
   // Mock fetch before each test
@@ -27,11 +27,9 @@ describe("API Service", () => {
       // Mock successful responses for each provider
       const mockOpenAIResponse = {
         ok: true,
-        json: jest
-          .fn()
-          .mockResolvedValue({
-            choices: [{ message: { content: "OpenAI response" } }],
-          }),
+        json: jest.fn().mockResolvedValue({
+          choices: [{ message: { content: "OpenAI response" } }],
+        }),
       };
 
       const mockAnthropicResponse = {
@@ -43,11 +41,9 @@ describe("API Service", () => {
 
       const mockMistralResponse = {
         ok: true,
-        json: jest
-          .fn()
-          .mockResolvedValue({
-            choices: [{ message: { content: "Mistral response" } }],
-          }),
+        json: jest.fn().mockResolvedValue({
+          choices: [{ message: { content: "Mistral response" } }],
+        }),
       };
 
       // Set up fetch to return different responses based on the URL
