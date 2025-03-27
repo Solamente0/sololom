@@ -3,7 +3,7 @@
  * Ensures that tests run in a specific order
  */
 
-const Sequencer = require('@jest/test-sequencer').default;
+const Sequencer = require("@jest/test-sequencer").default;
 
 class CustomSequencer extends Sequencer {
   /**
@@ -16,31 +16,31 @@ class CustomSequencer extends Sequencer {
     return tests.sort((testA, testB) => {
       const pathA = testA.path;
       const pathB = testB.path;
-      
+
       // Run utils tests first
-      if (pathA.includes('/utils/') && !pathB.includes('/utils/')) {
+      if (pathA.includes("/utils/") && !pathB.includes("/utils/")) {
         return -1;
       }
-      if (!pathA.includes('/utils/') && pathB.includes('/utils/')) {
+      if (!pathA.includes("/utils/") && pathB.includes("/utils/")) {
         return 1;
       }
-      
+
       // Then run services tests
-      if (pathA.includes('/services/') && !pathB.includes('/services/')) {
+      if (pathA.includes("/services/") && !pathB.includes("/services/")) {
         return -1;
       }
-      if (!pathA.includes('/services/') && pathB.includes('/services/')) {
+      if (!pathA.includes("/services/") && pathB.includes("/services/")) {
         return 1;
       }
-      
+
       // Then run components tests
-      if (pathA.includes('/components/') && !pathB.includes('/components/')) {
+      if (pathA.includes("/components/") && !pathB.includes("/components/")) {
         return -1;
       }
-      if (!pathA.includes('/components/') && pathB.includes('/components/')) {
+      if (!pathA.includes("/components/") && pathB.includes("/components/")) {
         return 1;
       }
-      
+
       // Default to alphabetical order
       return pathA.localeCompare(pathB);
     });

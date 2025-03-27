@@ -13,11 +13,11 @@ global.chrome = {
     }),
     onMessage: {
       addListener: jest.fn(),
-      removeListener: jest.fn()
+      removeListener: jest.fn(),
     },
-    getURL: jest.fn(path => `chrome-extension://mockextensionid/${path}`),
+    getURL: jest.fn((path) => `chrome-extension://mockextensionid/${path}`),
     lastError: null,
-    openOptionsPage: jest.fn()
+    openOptionsPage: jest.fn(),
   },
   storage: {
     sync: {
@@ -34,12 +34,12 @@ global.chrome = {
         }
         return Promise.resolve();
       }),
-      clear: jest.fn().mockImplementation(callback => {
+      clear: jest.fn().mockImplementation((callback) => {
         if (callback) {
           callback();
         }
         return Promise.resolve();
-      })
+      }),
     },
     local: {
       get: jest.fn().mockImplementation((keys, callback) => {
@@ -55,42 +55,42 @@ global.chrome = {
         }
         return Promise.resolve();
       }),
-      clear: jest.fn().mockImplementation(callback => {
+      clear: jest.fn().mockImplementation((callback) => {
         if (callback) {
           callback();
         }
         return Promise.resolve();
-      })
-    }
+      }),
+    },
   },
   tabs: {
     query: jest.fn().mockResolvedValue([]),
     create: jest.fn(),
-    sendMessage: jest.fn()
+    sendMessage: jest.fn(),
   },
   commands: {
     onCommand: {
-      addListener: jest.fn()
-    }
-  }
+      addListener: jest.fn(),
+    },
+  },
 };
 
 // Mock fetch API
-global.fetch = jest.fn().mockImplementation(() => 
+global.fetch = jest.fn().mockImplementation(() =>
   Promise.resolve({
     ok: true,
     json: () => Promise.resolve({}),
-    text: () => Promise.resolve(''),
+    text: () => Promise.resolve(""),
   })
 );
 
 // Mock clipboard API
-Object.defineProperty(navigator, 'clipboard', {
+Object.defineProperty(navigator, "clipboard", {
   value: {
     writeText: jest.fn().mockImplementation(() => Promise.resolve()),
-    readText: jest.fn().mockImplementation(() => Promise.resolve(''))
+    readText: jest.fn().mockImplementation(() => Promise.resolve("")),
   },
-  configurable: true
+  configurable: true,
 });
 
 // Mock console methods to suppress outputs during tests
@@ -120,12 +120,12 @@ beforeEach(() => {
 global.createTestElement = (tagName, id, attributes = {}) => {
   const element = document.createElement(tagName);
   element.id = id;
-  
+
   // Set attributes
   Object.entries(attributes).forEach(([key, value]) => {
     element.setAttribute(key, value);
   });
-  
+
   document.body.appendChild(element);
   return element;
 };
