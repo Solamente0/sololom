@@ -2,7 +2,7 @@
   "name": "sololom",
   "version": "1.0.0",
   "description": "Browser extension to chat with LLMs directly in your browser",
-  "author": "Omid Nateghi <omidnateghiofficial@gmail.com>",
+  "author": "<lurashinedev@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {

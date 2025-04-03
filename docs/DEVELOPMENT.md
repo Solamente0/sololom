@@ -325,4 +325,4 @@ We welcome contributions from the community and look forward to building a usefu
 
 ---
 
-© 2025 Omid Nateghi (omidnateghiofficial@gmail.com). All rights reserved.
+© 2025 (lurashinedev@gmail.com). All rights reserved.

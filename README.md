@@ -55,7 +55,7 @@ Sololom (Solamente LLM) is a browser extension that provides seamless access to 
 ## Support & Contribution
 
 ### Report Issues
-Email: omidnateghiofficial@gmail.com
+Email: lurashinedev@gmail.com
 
 ### Donations
 If you find this extension useful, please consider donating to support ongoing development.
@@ -71,6 +71,5 @@ All forks and derivatives must retain attribution to the original author.
 
 ## Author
 
-- Omid Nateghi (omidnateghiofficial@gmail.com)
+- (lurashinedev@gmail.com)
 - [GitHub](https://github.com/solamente0)
-- [LinkedIn](https://linkedin.com/in/solamente)

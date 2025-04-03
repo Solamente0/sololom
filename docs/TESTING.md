@@ -366,4 +366,4 @@ Remember that tests are also documentation - they demonstrate how components and
 
 ---
 
-© 2025 Omid Nateghi (omidnateghiofficial@gmail.com). All rights reserved.
+© 2025 (lurashinedev@gmail.com). All rights reserved.
