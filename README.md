@@ -55,7 +55,6 @@ Sololom (Solamente LLM) is a browser extension that provides seamless access to 
 ## Support & Contribution
 
 ### Report Issues
-Email: lurashinedev@gmail.com
 
 ### Donations
 If you find this extension useful, please consider donating to support ongoing development.
